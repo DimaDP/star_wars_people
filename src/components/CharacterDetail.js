@@ -1,7 +1,7 @@
 import { Card, CardMedia, createStyles, Divider, makeStyles, Typography } from '@material-ui/core';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router';
+import { useLocation } from 'react-router';
 import { getPerson } from '../store/actions/characters';
 import Loader from './generic/Loader';
 
@@ -42,12 +42,12 @@ const useStyles = makeStyles(() =>
 );
 
 const CharacterDetail = () => {
-	const params = useParams();
+	const params = useLocation().search;
 	const { person } = useSelector((store) => store);
 	const isLoading = useSelector((store) => store.isLoading);
 	const dispatch = useDispatch();
 
-	const idx = +params.id;
+	const idx = +params.split('=')[1];
 	const classes = useStyles();
 
 	useEffect(() => {

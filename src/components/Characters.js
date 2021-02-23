@@ -58,7 +58,7 @@ const Characters = () => {
 	const pages = people && Math.ceil(count / 10);
 
 	const chooseCard = (idx) => {
-		history.push(`${(page - 1) * 10 + idx + 1}`);
+		history.push(`user?id=${(page - 1) * 10 + idx + 1}`);
 	};
 
 	const handleChange = (e) => {
