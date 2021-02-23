@@ -1,19 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { getCharacters } from './store/actions/characters';
+import Home from './components/Home';
 
 function App() {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getCharacters(1));
+	}, []);
 	return (
-		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<BrowserRouter>
+			<Home />
+		</BrowserRouter>
 	);
 }
 
