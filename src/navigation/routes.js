@@ -1,2 +1,2 @@
 export const HOME = '/';
-export const PERSON_BY_ID = '/:id';
+export const PERSON_BY_ID = '/person';
