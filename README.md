@@ -17,4 +17,4 @@ npm i
 
 npm start
 
-[**DEMO LINK**](https://dimadp.github.io/react_todo-app/)
+[**DEMO LINK**](https://dimadp.github.io/star_wars_people/)
